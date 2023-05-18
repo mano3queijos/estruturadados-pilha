@@ -1,7 +1,6 @@
 package br.com.emanuelLap.pilha.exercicios;
 
 import java.util.Scanner;
-import java.util.Stack;
 
 import br.com.emanuelLap.pilha.Pilha;
 
@@ -10,7 +9,7 @@ import br.com.emanuelLap.pilha.Pilha;
 public class Ex01 {
 
 	static Pilha pilha = new Pilha();
-	static Stack stack = new Stack();
+	static Pilha stack = new Pilha();
 	static Scanner scan = new Scanner(System.in);
 
 	public static void main(String[] args) {
@@ -25,18 +24,18 @@ public class Ex01 {
 			for (int i = 0; i < 10; i++) {
 				Integer num = scan.nextInt();
 				if (verificarSeEImpar(num)) {
-					stack.push(num);
+					stack.empilha(num);
 					System.out.println("O numero era impar, empilhado");
 				} else {
 					System.out.println("Ele não era impar, não empilhado");
-					stack.pop();
+					stack.desemplilha();
 				}
 			}
 
 		} catch (Exception e) {
 			System.out.println("alguma coisa aconteceus");
 		} finally {
-			if (stack.isEmpty()) {
+			if (stack.estaVazia()) {
 				System.out.println("A lits ta vazia");
 			}
 

@@ -1,15 +1,15 @@
 package br.com.emanuelLap.pilha.exercicios;
 
-import java.util.InputMismatchException;
 import java.util.Scanner;
-import java.util.Stack;
+
+import br.com.emanuelLap.pilha.Pilha;
 
 @SuppressWarnings({ "rawtypes", "unchecked" })
 
 public class Ex02 {
 
-	static Stack stackEven = new Stack();
-	static Stack stackOdd = new Stack();
+	static Pilha stackEven = new Pilha();
+	static Pilha stackOdd = new Pilha();
 	static Scanner scan = new Scanner(System.in);
 
 	public static void main(String[] args) {
@@ -24,21 +24,21 @@ public class Ex02 {
 			for (int i = 0; i < 10; i++) {
 				Integer num = scan.nextInt();
 				if (num == 0) {
-					stackEven.pop();
-					stackOdd.pop();
+					stackEven.desemplilha();
+					stackOdd.desemplilha();
 				} else if (verificarSeEImpar(num)) {
-					stackEven.push(num);
+					stackEven.empilha(num);
 					System.out.println("the number is an even number, saved on StackEven's list");
 				} else {
 					System.out.println("the number is an Odd number, saved on StackOdd's list");
-					stackOdd.push(num);
+					stackOdd.empilha(num);
 				}
 			}
 
-		} catch (InputMismatchException e) {
+		} catch (Exception e) {
 			System.out.println("something heppens");
 		} finally {
-			if (stackEven.isEmpty() || stackOdd.isEmpty()) {
+			if (stackEven.estaVazia() || stackOdd.estaVazia()) {
 				System.out.println("Tem lista vazia");
 			}
 
@@ -50,10 +50,10 @@ public class Ex02 {
 	public static void desempilhaMostrando() {
 		System.out.println("desempilahndo even");
 		System.out.println("desempilahndo Odd");
-		while (!stackEven.isEmpty() && !stackOdd.isEmpty()) {
+		while (!stackEven.estaVazia() && !stackOdd.estaVazia()) {
 
-			System.out.print(stackEven.pop() + " ");
-			System.out.print(stackOdd.pop() + " ");
+			System.out.print(stackEven.desemplilha() + " ");
+			System.out.print(stackOdd.desemplilha() + " ");
 		}
 
 	}
