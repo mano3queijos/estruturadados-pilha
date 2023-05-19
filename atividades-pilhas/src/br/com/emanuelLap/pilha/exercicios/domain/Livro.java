@@ -1,19 +1,17 @@
 package br.com.emanuelLap.pilha.exercicios.domain;
 
-import java.time.LocalDate;
-
 public class Livro {
 
 	private String nome;
 	private String isbn;
-	private LocalDate aboLancamento;
+	private String aboLancamento;
 	private String autor;
 
-	public Livro(String nome, String isbn, LocalDate aboLancamento, String autor) {
+	public Livro(String nome, String isbn, String anoLancamento, String autor) {
 		super();
 		this.nome = nome;
 		this.isbn = isbn;
-		this.aboLancamento = aboLancamento;
+		this.aboLancamento = anoLancamento;
 		this.autor = autor;
 	}
 
@@ -33,11 +31,11 @@ public class Livro {
 		this.isbn = isbn;
 	}
 
-	public LocalDate getAboLancamento() {
+	public String getAboLancamento() {
 		return aboLancamento;
 	}
 
-	public void setAboLancamento(LocalDate aboLancamento) {
+	public void setAboLancamento(String aboLancamento) {
 		this.aboLancamento = aboLancamento;
 	}
 
