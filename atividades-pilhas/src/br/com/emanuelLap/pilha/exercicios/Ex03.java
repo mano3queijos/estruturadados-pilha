@@ -41,14 +41,13 @@ public class Ex03 {
 		try {
 			for (int i = 0; i < num; i++) {
 				System.out.println("Informe o nome do livro");
-				scan.next();
 				String nome = scan.nextLine();
 				System.out.println("Ibnforme o isbn do livro");
 				String isbn = scan.next();
+				scan.nextLine();
 				System.out.println("Infrome data de lançamento do livro ");
 				String anoLancamento = scan.next();
 				System.out.println("Informe o nome do auto");
-				scan.next();
 				String nomeAutor = scan.nextLine();
 				pilha.empilha(new Livro(nome, isbn, anoLancamento, nomeAutor));
 
