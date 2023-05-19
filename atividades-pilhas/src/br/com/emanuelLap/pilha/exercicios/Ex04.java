@@ -16,7 +16,7 @@ public class Ex04 {
 
 		System.out.println("Inserindo elementos");
 
-		insertElement(2);
+		insertElement(1);
 
 		System.out.println("Verificando se a pilha está vazia");
 
@@ -26,8 +26,8 @@ public class Ex04 {
 		System.out.println("Livro do topo da pilha: " + stack.peek() + "\n");
 
 		System.out.println("Desempilhar elemento");
-		System.out.println("Elemento a ser desempilhad: " + stack.peek() + stack);
-
+		System.out.println("Elemento a ser desempilhad: " + stack.peek());
+		stack.pop();
 	}
 
 	public static String verificarVazia() {
@@ -41,14 +41,15 @@ public class Ex04 {
 		try {
 			for (int i = 0; i < num; i++) {
 				System.out.println("input the book's name");
-				scan.next();
 				String nome = scan.nextLine();
 				System.out.println("input the book's isbn");
 				String isbn = scan.next();
+				scan.nextLine();
 				System.out.println("input book release year");
 				String anoLancamento = scan.next();
+				scan.nextLine();
+
 				System.out.println("input author's name");
-				scan.next();
 				String nomeAutor = scan.nextLine();
 				stack.push(new Livro(nome, isbn, anoLancamento, nomeAutor));
 
@@ -60,6 +61,3 @@ public class Ex04 {
 	}
 
 }
-
-
-
