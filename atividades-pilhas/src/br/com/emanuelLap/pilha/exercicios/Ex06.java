@@ -1,3 +1,5 @@
+
+// EU ACHO QUE JÁ DEU DE ESTRUTURA DE DADO POR HOJE
 package br.com.emanuelLap.pilha.exercicios;
 
 import java.util.Scanner;
